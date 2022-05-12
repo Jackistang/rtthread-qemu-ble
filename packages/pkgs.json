@@ -1,0 +1,7 @@
+[
+ {
+  "path": "/packages/iot/NimBLE", 
+  "ver": "latest", 
+  "name": "NIMBLE"
+ }
+]
