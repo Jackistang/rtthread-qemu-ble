@@ -11,26 +11,20 @@ println "Installing bluez dependency success"
 
 # 安装 bluez 依赖项目 ell，需与 bluez 处于同一目录下
 cd ~
-if [ ! -d ell-0.6 ] && [ ! -d ell ];
+if [ ! -d ell ];
 then
   println "Installing ell"
-  wget https://mirrors.edge.kernel.org/pub/linux/libs/ell/ell-0.6.tar.xz
-  tar -xvf ell-0.6.tar.xz
-  cd ell-0.6/
-  ./configure --prefix=/usr
-  make
-  sudo make install
+  git clone -b 0.35 git://git.kernel.org/pub/scm/libs/ell/ell.git
   println "Installing success"
 fi
 
 # 安装 Bluez
 cd ~
-if [ ! -d bluez-5.50 ] && [ ! -d bluez ];
+if [ ! -d bluez ];
 then
   println "Installing bluez"
-  wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.50.tar.xz 
-  tar -xvf bluez-5.50.tar.xz 
-  cd bluez-5.50/
+  git clone -b 5.55 https://github.com/bluez/bluez.git
+  cd bluez
   ./bootstrap-configure --disable-android --disable-midi
   make
   sudo systemctl daemon-reload
