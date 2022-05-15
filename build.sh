@@ -7,7 +7,7 @@ echo "Installing bluez dependency success"
 
 # 安装 bluez 依赖项目 ell，需与 bluez 处于同一目录下
 cd ~
-if ! [ -d ell-0.6 ] || [ -d ell ];
+if ! [ [ -d ell-0.6 ] && [ -d ell ] ];
 then
   echo "Installing ell"
   wget https://mirrors.edge.kernel.org/pub/linux/libs/ell/ell-0.6.tar.xz
@@ -21,7 +21,7 @@ fi
 
 # 安装 Bluez
 cd ~
-if ! [ -d bluez-5.50 ] || [ -d bluez ];
+if ! [ [ -d bluez-5.50 ] && [ -d bluez ] ];
 then
   echo "Installing bluez"
   wget http://www.kernel.org/pub/linux/bluetooth/bluez-5.50.tar.xz 
