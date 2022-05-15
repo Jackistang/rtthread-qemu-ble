@@ -1,3 +1,3 @@
 [submodule "packages/nimble"]
 	path = packages/nimble
-	url = git@github.com:Jackistang/nimble.git
+	url = https://github.com/Jackistang/nimble.git
