@@ -4,6 +4,8 @@
 
 利用 qemu 环境运行 ble，不使用使用外接的蓝牙芯片，直接使用物理机自带的蓝牙控制器，同时也不需要下载固件，对于测试学习蓝牙应用开发十分方便。在开始运行该工程前，需在命令行输入 `hciconfig` 命令确保物理机有 `hci0` 蓝牙控制器。若为其他蓝牙控制器，例如 hci1, hci2 等等，请根据注释修改 `qemu-ble.sh` 文件。
 
+该工程使用 NimBLE 的 Host 协议栈，并运行 ble_hr 例程。
+
 ```shell
 jackis@jackis:~/C/rtthread-qemu-ble$ hciconfig
 hci0:	Type: Primary  Bus: USB
@@ -18,7 +20,7 @@ hci0:	Type: Primary  Bus: USB
 环境搭建（最好能科学上网）：
 
 ```shell
-git clone https://github.com/Jackistang/rtthread-qemu-ble.git
+git clone --recursive https://github.com/Jackistang/rtthread-qemu-ble.git
 cd rtthread-qemu-ble
 ./build.sh
 ```
