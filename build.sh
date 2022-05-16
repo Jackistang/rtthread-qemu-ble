@@ -6,7 +6,8 @@ function println() {
 
 # 安装 bluez 依赖环境，可能有缺失，需要及时更新
 println "Installing bluez dependency"
-sudo apt-get install -y git bc libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev autoconf bison flex libssl-dev libjson-c-dev
+sudo apt install -y git bc libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev autoconf bison flex libssl-dev libjson-c-dev
+sudo apt install automake libtool libelf-dev elfutils libdw-dev libjson-c-dev libical-dev libreadline-dev glib2.0 libdbus-1-dev libudev-dev
 println "Installing bluez dependency success"
 
 # 安装 bluez 依赖项目 ell，需与 bluez 处于同一目录下
