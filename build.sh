@@ -6,9 +6,17 @@ function println() {
 
 # 安装 bluez 依赖环境，可能有缺失，需要及时更新
 println "Installing bluez dependency"
-sudo apt install -y git bc libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev autoconf bison flex libssl-dev libjson-c-dev
-sudo apt install -y automake libtool libelf-dev elfutils libdw-dev libjson-c-dev libical-dev libreadline-dev libdbus-1-dev libudev-dev
+sudo apt install -y git bc libusb-dev libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev autoconf bison flex libssl-dev automake libtool libelf-dev elfutils libdw-dev
 println "Installing bluez dependency success"
+
+# ubuntu 18.04 用 apt 安装的 json-c 版本过低，单独安装
+cd ~
+git clone -b json-c-0.15-20200726 https://github.com/json-c/json-c.git \ 
+   && cd json-c \
+   && mkdir build && cd build \ 
+   && cmake .. \ 
+   && make \ 
+   && make install
 
 # 安装 bluez 依赖项目 ell，需与 bluez 处于同一目录下
 cd ~
