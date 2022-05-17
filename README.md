@@ -22,7 +22,7 @@ hci0:	Type: Primary  Bus: USB
 ```shell
 git clone --recursive https://github.com/Jackistang/rtthread-qemu-ble.git
 cd rtthread-qemu-ble
-./build.sh
+sudo ./build.sh
 ```
 
 编译：
