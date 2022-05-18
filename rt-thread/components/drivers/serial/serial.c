@@ -33,7 +33,7 @@
 #include <rtdevice.h>
 
 #define DBG_TAG    "UART"
-#define DBG_LVL    DBG_INFO
+#define DBG_LVL    DBG_LOG
 #include <rtdbg.h>
 
 #ifdef RT_USING_POSIX_STDIO

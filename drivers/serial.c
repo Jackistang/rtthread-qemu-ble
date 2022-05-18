@@ -25,6 +25,8 @@ struct hw_uart_device
 #define UART_IMSC(base) __REG32(base + 0x38)
 #define UART_ICR(base)  __REG32(base + 0x44)
 
+#define UARTCR_RTSEN    (1 << 14)
+#define UARTCR_CTSEN    (1 << 15)
 #define UARTFR_RXFE     0x10
 #define UARTFR_TXFF     0x20
 #define UARTIMSC_RXIM   0x10
@@ -41,6 +43,17 @@ static void rt_hw_uart_isr(int irqno, void *param)
 
 static rt_err_t uart_configure(struct rt_serial_device *serial, struct serial_configure *cfg)
 {
+    struct hw_uart_device *uart;
+
+    RT_ASSERT(serial != RT_NULL);
+    uart = (struct hw_uart_device *)serial->parent.user_data;
+
+    if (cfg->flowcontrol == RT_SERIAL_FLOWCONTROL_CTSRTS) {
+        /* enable cts/rts */
+        UART_CR(uart->hw_base) |= UARTCR_CTSEN;
+        UART_CR(uart->hw_base) |= UARTCR_RTSEN;
+    }
+
     return RT_EOK;
 }
 

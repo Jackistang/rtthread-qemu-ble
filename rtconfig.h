@@ -274,7 +274,7 @@
 
 /* Device Driver support */
 
-#define NIMBLE_DEBUG_LEVEL_I
+#define NIMBLE_DEBUG_LEVEL_D
 #define NIMBLE_DEBUG_LEVEL 2
 #define PKG_NIMBLE_SAMPLE_DISABLE
 #define PKG_NIMBLE_MAX_CONNECTIONS 1
