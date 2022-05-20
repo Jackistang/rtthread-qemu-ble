@@ -17,7 +17,7 @@ hci0:	Type: Primary  Bus: USB
 
 
 
-环境搭建（最好能科学上网）：
+**环境搭建（最好能科学上网）：**
 
 ```shell
 git clone --recursive https://github.com/Jackistang/rtthread-qemu-ble.git
@@ -25,13 +25,13 @@ cd rtthread-qemu-ble
 sudo ./build.sh
 ```
 
-编译：
+**编译：**
 
 ```shell
 scons
 ```
 
-运行 rtthread-qemu，然后在 msh 终端里输入 `ble_hr` 命令即可。
+**运行** rtthread-qemu，然后在 msh 终端里输入 `ble_hr` 命令即可。
 
 ```shell
 ./qemu-ble.sh
@@ -41,9 +41,25 @@ msh />ble_hr
 
 键入 `Ctrl a + Ctrl x` 退出 qemu 环境。
 
+**VSCode 调试：**
+
+键入 `Ctrl+Alt+J` 打开 VSCode 终端，在终端运行里 `qemu-ble-dbg.sh` 文件，开启 gdb server；然后按 `F5`，VSCode 自动进行编译调试。
+
+**使用H4协议蓝牙芯片**
+
+该运行环境还支持接入 H4 协议的蓝牙芯片，将芯片通过串口接入电脑，并修改 `qemu-ble.sh` 文件，
+
+```shell
+-serial unix:/tmp/bt-server-bredr
+修改为
+-serial /dev/ttyACM0 （实际串口接口）
+```
+
+**注意**：该方式目前仅在 linux 环境测试成功，windows 环境不可用。
+
 ------
 
-reference:
+**reference:**
 
 - [Bluetooth tools](https://docs.zephyrproject.org/latest/connectivity/bluetooth/bluetooth-tools.html)
 - [Step-by-Step Guide: How to Deploy BlueZ v5.50 on Raspberry Pi 3 and Use It](https://www.bluetooth.com/bluetooth-resources/developer-study-guide-how-to-deploy-bluez-on-a-raspberry-pi-board-as-a-bluetooth-mesh-provisioner/)
