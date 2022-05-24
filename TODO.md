@@ -6,6 +6,7 @@ Project Description
 
 ### Todo
 
+- [ ] build.sh 添加命令行选项 --disable_bluez，便于不需要 bluez 环境的场景  
 - [ ] 添加常用的 zephyr controller 固件  
 
 ### In Progress
