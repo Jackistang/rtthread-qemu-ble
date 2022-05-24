@@ -47,12 +47,10 @@ msh />ble_hr
 
 **使用H4协议蓝牙芯片**
 
-该运行环境还支持接入 H4 协议的蓝牙芯片，将芯片通过串口接入电脑，并修改 `qemu-ble.sh` 文件，
+该运行环境还支持接入 H4 协议的蓝牙芯片，不需要 bluez 的环境搭建。将芯片通过串口接入电脑，获取实际的串口设备 /dev/ttyXXX，然后运行：
 
 ```shell
--serial unix:/tmp/bt-server-bredr
-修改为
--serial /dev/ttyACM0 （实际串口接口）
+qemu-system-arm -M vexpress-a9 -smp cpus=2 -kernel rtthread.bin -nographic -serial mon:stdio -serial /dev/ttyXXX
 ```
 
 **注意**：该方式目前仅在 linux 环境测试成功，windows 环境不可用。
