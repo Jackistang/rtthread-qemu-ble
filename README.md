@@ -55,6 +55,10 @@ qemu-system-arm -M vexpress-a9 -smp cpus=2 -kernel rtthread.bin -nographic -seri
 
 **注意**：该方式目前仅在 linux 环境测试成功，windows 环境不可用。
 
+## 常用固件
+
+一些常用的蓝牙 Controller 固件可以在 firmwares 目录下找到，若有其他需要的固件可以提 issue，我会及时添加。
+
 ------
 
 **reference:**
