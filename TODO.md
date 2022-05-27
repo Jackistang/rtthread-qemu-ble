@@ -6,11 +6,11 @@ Project Description
 
 ### Todo
 
-- [ ] 解决 windows qemu 串口通信问题  
 - [ ] build.sh 添加命令行选项 --disable_bluez，便于不需要 bluez 环境的场景  
 
 ### In Progress
 
+- [ ] 解决 windows qemu 串口通信问题：https://github.com/RT-Thread/rt-thread/issues/6000  
 
 ### Done ✓
 
